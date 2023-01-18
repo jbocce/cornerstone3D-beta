@@ -32,13 +32,14 @@ async function jumpToSlice(
 
   const { viewport } = enabledElement;
 
-  const { imageIndex: currentImageIndex, numberOfSlices } = _getImageSliceData(
-    viewport,
-    debounceLoading
-  );
+  const {
+    imageIndex: currentImageIndex,
+    numberOfSlices,
+    isReversed,
+  } = _getImageSliceData(viewport, debounceLoading);
 
   const imageIndexToJump = _getImageIndexToJump(numberOfSlices, imageIndex);
-  const delta = imageIndexToJump - currentImageIndex;
+  const delta = (isReversed ? -1 : 1) * (imageIndexToJump - currentImageIndex);
 
   scroll(viewport, { delta, debounceLoading });
 }

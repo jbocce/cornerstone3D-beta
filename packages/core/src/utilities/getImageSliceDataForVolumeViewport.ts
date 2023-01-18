@@ -20,7 +20,7 @@ function getImageSliceDataForVolumeViewport(
     return;
   }
 
-  const { viewPlaneNormal, focalPoint } = camera;
+  const { viewPlaneNormal, focalPoint, position } = camera;
 
   const actorEntry = viewport
     .getActors()
@@ -36,13 +36,24 @@ function getImageSliceDataForVolumeViewport(
   const volumeActor = actorEntry.actor as VolumeActor;
   const sliceRange = getSliceRange(volumeActor, viewPlaneNormal, focalPoint);
 
-  const { min, max, current } = sliceRange;
+  let { min, max } = sliceRange;
+  const { current } = sliceRange;
 
   // calculate number of steps from min to max with current normal spacing in direction
   const numberOfSlices = Math.round((max - min) / spacingInNormalDirection) + 1;
 
+  // Use the relative 'negativeness' of the view normal to indicate if index is from the "end of the slice range"
+  const isReversed =
+    viewPlaneNormal[0] + viewPlaneNormal[1] + viewPlaneNormal[2] < 0;
+
+  if (isReversed) {
+    min = sliceRange.max;
+    max = sliceRange.min;
+  }
+
   // calculate the imageIndex based on min, max, current
-  let imageIndex = ((current - min) / (max - min)) * numberOfSlices;
+  let imageIndex =
+    (Math.abs(current - min) / Math.abs(max - min)) * numberOfSlices;
   imageIndex = Math.floor(imageIndex);
 
   // Clamp imageIndex
@@ -55,6 +66,7 @@ function getImageSliceDataForVolumeViewport(
   return {
     numberOfSlices,
     imageIndex,
+    isReversed,
   };
 }
 

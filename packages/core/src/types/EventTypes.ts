@@ -193,6 +193,7 @@ type VolumeNewImageEventDetail = {
   viewportId: string;
   /** unique id for the renderingEngine */
   renderingEngineId: string;
+  isReversed: boolean;
 };
 
 /**

@@ -45,7 +45,7 @@ function volumeNewImageEventDispatcher(
     state[viewport.id] = 0;
   }
 
-  const { numberOfSlices, imageIndex } =
+  const { numberOfSlices, imageIndex, isReversed } =
     getImageSliceDataForVolumeViewport(viewport);
 
   if (state[viewport.id] === imageIndex) {
@@ -59,6 +59,7 @@ function volumeNewImageEventDispatcher(
     viewportId,
     renderingEngineId,
     numberOfSlices,
+    isReversed,
   };
 
   triggerEvent(viewport.element, Events.VOLUME_NEW_IMAGE, eventDetail);
