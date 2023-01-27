@@ -3,6 +3,7 @@ import {
   Types,
   Enums,
   getRenderingEngine,
+  setUseCPURendering,
 } from '@cornerstonejs/core';
 import {
   initDemo,
@@ -246,6 +247,11 @@ async function run() {
       '1.3.6.1.4.1.14519.5.2.1.7009.2403.226151125820845824875394858561',
     wadoRsRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
   });
+  const sagitalImageIds = await createImageIdsAndCacheMetaData({
+    StudyInstanceUID: '1.3.6.1.4.1.25403.345050719074.3824.20170125095722.1',
+    SeriesInstanceUID: '1.3.6.1.4.1.25403.345050719074.3824.20170125095748.1',
+    wadoRsRoot: 'https://domvja9iplmyu.cloudfront.net/dicomweb',
+  });
 
   // Instantiate a rendering engine
   const renderingEngine = new RenderingEngine(renderingEngineId);
@@ -272,7 +278,12 @@ async function run() {
   const stack = [imageIds[0], imageIds[1], imageIds[2]];
 
   // Set the stack on the viewport
-  await viewport.setStack(stack);
+  await viewport.setStack([
+    ...stack,
+    sagitalImageIds[0],
+    sagitalImageIds[1],
+    imageIds[3],
+  ]);
 
   // Set the VOI of the stack
   viewport.setProperties({ voiRange: ctVoiRange });
