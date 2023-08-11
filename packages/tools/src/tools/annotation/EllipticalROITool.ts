@@ -912,6 +912,8 @@ class EllipticalROITool extends AnnotationTool {
         ellipseUID,
         canvasCorners[0],
         canvasCorners[1],
+        canvasCoordinates,
+        viewport.getRotation(),
         {
           color,
           lineDash,

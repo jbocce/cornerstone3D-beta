@@ -168,7 +168,7 @@ addButtonToToolbar({
 });
 
 addButtonToToolbar({
-  title: 'Rotate Delta 90',
+  title: 'Rotate Delta 30',
   onClick: () => {
     // Get the rendering engine
     const renderingEngine = getRenderingEngine(renderingEngineId);
@@ -179,7 +179,7 @@ addButtonToToolbar({
     );
 
     const { rotation } = viewport.getProperties();
-    viewport.setProperties({ rotation: rotation + 90 });
+    viewport.setProperties({ rotation: rotation + 30 });
 
     viewport.render();
   },

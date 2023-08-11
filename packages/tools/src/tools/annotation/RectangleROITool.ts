@@ -644,7 +644,9 @@ class RectangleROITool extends AnnotationTool {
       const annotation = annotations[i] as RectangleROIAnnotation;
       const { annotationUID, data } = annotation;
       const { points, activeHandleIndex } = data.handles;
-      const canvasCoordinates = points.map((p) => viewport.worldToCanvas(p));
+      const canvasCoordinates = points.map((p) => {
+        return viewport.worldToCanvas(p);
+      });
 
       styleSpecifier.annotationUID = annotationUID;
 
