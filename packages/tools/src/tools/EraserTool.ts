@@ -47,7 +47,7 @@ class EraserTool extends BaseTool {
         continue;
       }
 
-      const annotations = state.getAnnotations(toolName, viewportId);
+      const annotations = state.getAnnotations(toolName, element);
 
       for (const annotation of annotations) {
         if (
