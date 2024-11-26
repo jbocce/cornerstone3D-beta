@@ -113,10 +113,15 @@ export default function smoothAnnotation(
         interpolatedCanvasPoints,
         0,
         canvasPoints.length,
-        options?.knotsRatioPercentage || 30
+        (options?.knotsRatioPercentage || 30) + i
       )
     );
     rotate(interpolatedCanvasPoints, -rotation);
+
+    if (annotation.data.isOpenUShapeContour) {
+      // Ensure that any T/vector to peak is recalculated during smoothing.
+      annotation.data.openUShapeContourVectorToPeak = undefined;
+    }
   }
 
   const unRotate = mat4.invert(mat4.create(), rotateMat);
