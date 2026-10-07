@@ -209,7 +209,7 @@ overrides:
   '@babel/helper-compilation-targets': 7.29.7
   caniuse-lite: 1.0.30001767
   browserslist@<4.28.7: 4.28.7
-  axios: 1.20.0
+  axios: 1.18.1
   buffer: 6.0.3
   node-forge: 1.4.0
   canvas: 3.2.0
@@ -6704,7 +6704,7 @@ packages:
       }
     engines: { node: '>= 0.4' }
 
-  axios@1.20.0:
+  axios@1.18.1:
     resolution:
       {
         integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==,
@@ -21402,7 +21402,7 @@ snapshots:
 
   '@itk-wasm/dam@1.1.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
-      axios: 1.20.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
+      axios: 1.18.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       commander: 10.0.1
       decompress: 4.2.1
       files-from-path: 1.1.4
@@ -23423,7 +23423,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.1.0
 
-  axios@1.20.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1):
+  axios@1.18.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       follow-redirects: 1.16.0(debug@4.4.3(supports-color@8.1.1))
       form-data: 4.0.6
@@ -26367,7 +26367,7 @@ snapshots:
       '@itk-wasm/dam': 1.1.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       '@thewtex/zstddec': 0.2.1
       '@types/emscripten': 1.40.0
-      axios: 1.20.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
+      axios: 1.18.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       comlink: 4.4.2
       commander: 11.1.0
       fs-extra: 11.3.5
@@ -26384,7 +26384,7 @@ snapshots:
       '@itk-wasm/dam': 1.1.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       '@thewtex/zstddec': 0.2.1
       '@types/emscripten': 1.40.0
-      axios: 1.20.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
+      axios: 1.18.1(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
       chalk: 5.6.2
       comlink: 4.4.2
       commander: 11.1.0
