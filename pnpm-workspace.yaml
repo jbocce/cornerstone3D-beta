@@ -100,6 +100,14 @@ auditConfig:
     # dev tools (chokidar, micromatch, and the shelljs CLI that vtk.js lists) write
     # themselves; no shipped code passes it an untrusted pattern
     - GHSA-vfj7-8cjw-p6xm
+    # TEST ONLY (dependency audit test PR, do not merge): axios 1.18.1
+    - GHSA-m8m8-qj5v-23w3
+    - GHSA-c29m-xwm3-cm6r
+    - GHSA-mghh-pgcx-3jjj
+    - GHSA-x97p-jq2g-jp4f
+    - GHSA-3pq3-5fj3-cg6v
+    - GHSA-542g-h47m-68v8
+    - GHSA-r4gj-5m52-g5wh
 allowBuilds:
   '@swc/core': true
   canvas: true
