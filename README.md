@@ -216,3 +216,5 @@ Vitest browser-mode tests currently live only in-repo. Use `yarn test:vitest:bro
 ### License
 
 Cornerstone is [MIT licensed](./LICENSE).
+
+<!-- TEST ONLY (dependency audit test PR, do not merge) -->
